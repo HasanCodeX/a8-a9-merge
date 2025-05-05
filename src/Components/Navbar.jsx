@@ -1,8 +1,8 @@
-// Navbar.jsx
+// src/Components/Navbar.jsx
 import { Link, NavLink } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { signOut } from "firebase/auth";
-import { auth } from "../firebase/firebase.config"; // adjust path as needed
+import { auth } from "../firebase/firebase.config";
 import logo from "../assets/logo.png";
 
 const Navbar = () => {
@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="hidden lg:flex items-center gap-4">
           {user ? (
             <>
-              {/* User avatar with tooltip */}
+              {/* User avatar with dropdown */}
               <div className="dropdown dropdown-hover">
                 <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                   <div className="w-10 rounded-full">
@@ -47,15 +47,25 @@ const Navbar = () => {
                   tabIndex={0}
                   className="dropdown-content z-[1] p-2 shadow bg-base-100 rounded-box w-44 text-center"
                 >
-                  <p className="text-sm">{user.displayName}</p>
-                  <button onClick={handleLogout} className="btn btn-sm btn-error mt-2">Logout</button>
+                  <p className="text-sm font-medium">{user.displayName}</p>
+                  <button
+                    onClick={handleLogout}
+                    className="btn btn-sm btn-error mt-2 w-full"
+                  >
+                    Logout
+                  </button>
                 </div>
               </div>
             </>
           ) : (
-            <Link to="/login" className="btn btn-primary rounded-full px-6">
-              Login
-            </Link>
+            <>
+              <Link to="/login" className="btn btn-primary rounded-full px-5">
+                Login
+              </Link>
+              <Link to="/signup" className="btn btn-primary rounded-full px-5">
+                Sign Up
+              </Link>
+            </>
           )}
         </div>
 
@@ -80,17 +90,26 @@ const Navbar = () => {
             <li><NavLink to="/profile" className={navLinkStyle}>My Profile</NavLink></li>
             {user ? (
               <>
+                <li><span className="text-xs text-gray-500">{user.displayName}</span></li>
                 <li>
-                  <span className="text-xs text-gray-500">{user.displayName}</span>
-                </li>
-                <li>
-                  <button onClick={handleLogout} className="btn btn-sm btn-error">Logout</button>
+                  <button onClick={handleLogout} className="btn btn-sm btn-error w-full">
+                    Logout
+                  </button>
                 </li>
               </>
             ) : (
-              <li>
-                <Link to="/login" className="btn btn-sm btn-primary">Login</Link>
-              </li>
+              <>
+                <li>
+                  <Link to="/login" className="btn btn-sm btn-primary w-full">
+                    Login
+                  </Link>
+                </li>
+                <li>
+                  <Link to="/signup" className="btn btn-sm btn-primary w-full">
+                    Sign Up
+                  </Link>
+                </li>
+              </>
             )}
           </ul>
         </div>

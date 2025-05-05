@@ -1,55 +1,71 @@
-import React from "react";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/effect-fade';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { EffectFade, Navigation, Pagination, Autoplay } from 'swiper/modules';
 
+export default function HeroSlider() {
+  const slides = [
+    {
+      img: 'https://i.ibb.co.com/N6L0DfPt/Bid3-min.png',
+      title: 'Tech Conferences 2025',
+      subtitle: 'Stay ahead with the latest in innovation',
+    },
+    {
+      img: 'https://i.ibb.co.com/PZ8CJ3vr/meet.jpg',
+      title: 'Connect & Collaborate',
+      subtitle: 'Join exciting local meetups around you',
+    },
+    
+    {
+      img: 'https://i.ibb.co.com/xtQwvqSf/Bid2-min.png',
+      title: 'Community Events',
+      subtitle: 'Discover fun activities and networking opportunities',
+    },
+  ];
 
-const HeroSection = () => {
   return (
-    <section
-      className="border rounded-4xl m-8 border-gray-300 bg-gradient-to-t from-white to-gray-200"
-    >
-      <div className="max-w-7xl mx-auto px-4 py-16 text-center">
-        
-        <h1 className="text-3xl md:text-5xl font-bold text-gray-800 mb-4">
-          Dependable Care, Backed by Trusted Professionals.
-        </h1>
+    <div className="w-full rounded-2xl overflow-hidden shadow-xl">
+      <Swiper
+        spaceBetween={30}
+        effect="fade"
+        navigation={true}
+        pagination={{ clickable: true }}
+        autoplay={{
+          delay: 1000,
+          disableOnInteraction: false,
+        }}
+        modules={[EffectFade, Navigation, Pagination, Autoplay]}
+        className="mySwiper"
+      >
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="relative w-full max-h-[450px]">
+              <img
+                src={slide.img}
+                alt={`Slide ${index + 1}`}
+                className="w-full h-full object-cover"
+              />
+              {/* Overlay for contrast */}
+              <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-black/20"></div>
 
-       
-        <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-8">
-          Our platform connects you with verified, experienced doctors across various specialties —
-          all at your convenience. Whether it’s a routine checkup or urgent consultation, book
-          appointments in minutes and receive quality care you can trust.
-        </p>
+              {/* Text Content */}
+             
+              <div className="absolute inset-0 flex flex-col justify-center items-center px-4 space-y-4 text-center">
+  <h2 className="text-white text-3xl md:text-5xl font-extrabold drop-shadow-md">
+    {slide.title}
+  </h2>
+  <p className="text-white text-lg md:text-2xl font-medium drop-shadow-sm max-w-2xl">
+    {slide.subtitle}
+  </p>
+</div>
 
-        
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto mb-12">
-          <input
-            type="text"
-            placeholder="Search any doctor..."
-            className="w-full px-6 py-3 rounded-full border shadow outline-none"
-          />
-          <button className="w-2xs bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-full transition-all">
-            Search Now
-          </button>
-        </div>
-
-  
-
-
-      
-        <div className="flex flex-col md:flex-row justify-center gap-6">
-          <img
-            src="https://i.ibb.co.com/Fb8R18bs/two-professional-confident-doctor-shaking-hands-while-standing-clinic-teamwork-caucasian-medical-mee.jpg"
-            alt="Doctor 1"
-            className="rounded-2xl shadow-md w-full md:w-1/2 object-cover"
-          />
-          <img
-            src="https://i.ibb.co.com/FLCqSTB5/banner-img-1.png"
-            alt="Doctor 2"
-            className="rounded-2xl shadow-md w-full md:w-1/2 object-cover"
-          />
-        </div>
-      </div>
-    </section>
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
   );
-};
-
-export default HeroSection;
+}
