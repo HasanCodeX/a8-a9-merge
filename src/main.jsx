@@ -10,10 +10,10 @@ import App from "./App";
 
 // Pages
 import Home from "./pages/Home";
-import DoctorDetails from "./pages/DoctorDetails"; 
-import Bookings from "./pages/Bookings";
+// import DoctorDetails from "./pages/DoctorDetails"; 
+// import Bookings from "./pages/Bookings";
 import NotFound from "./pages/NotFound";
-import Blogs from "./pages/Blogs";
+// import Blogs from "./pages/Blogs";
 
 
 const router = createBrowserRouter([
@@ -22,9 +22,9 @@ const router = createBrowserRouter([
     element: <App />, 
     children: [
       { index: true, element: <Home /> },
-      { path: "doctors/:id", element: <DoctorDetails /> }, 
-      { path: "bookings", element: <Bookings /> },
-      { path: "blogs", element: <Blogs /> },
+      // { path: "doctors/:id", element: <DoctorDetails /> }, 
+      // { path: "bookings", element: <Bookings /> },
+      // { path: "blogs", element: <Blogs /> },
     ],
   },
   {

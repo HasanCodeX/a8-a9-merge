@@ -14,7 +14,7 @@ const Footer = () => {
       : "text-gray-600 hover:text-primary transition duration-200";
 
   return (
-    <footer className="bg-gradient-to-br from-gray-100 via-white to-gray-100 text-gray-700">
+    <footer className=" bg-gradient-to-br from-gray-100 via-white to-gray-100 text-gray-700">
       <div className="max-w-7xl mx-auto px-4 md:px-8 py-16">
         {/* Top: Logo + Nav */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12">

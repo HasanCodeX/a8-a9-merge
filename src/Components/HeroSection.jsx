@@ -20,21 +20,21 @@ export default function HeroSlider() {
     },
     
     {
-      img: 'https://i.ibb.co.com/xtQwvqSf/Bid2-min.png',
+      img: 'https://i.ibb.co.com/nqDYhzLP/image5.jpg',
       title: 'Community Events',
       subtitle: 'Discover fun activities and networking opportunities',
     },
   ];
 
   return (
-    <div className="w-full rounded-4xl overflow-hidden shadow-xl  ">
+    <div className="w-full rounded-2xl overflow-hidden shadow-xl  ">
       <Swiper
         spaceBetween={30}
         effect="fade"
         navigation={true}
         pagination={{ clickable: true }}
         autoplay={{
-          delay: 1000,
+          delay: 1200,
           disableOnInteraction: false,
         }}
         modules={[EffectFade, Navigation, Pagination, Autoplay]}

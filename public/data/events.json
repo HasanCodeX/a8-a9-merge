@@ -20,7 +20,7 @@
   {
     "id": 3,
     "thumbnail": "https://i.ibb.co.com/G4cvdmXK/image6.jpg",
-    "name": "Sports Meetup",
+    "name": "Film Maker Meetup",
     "category": "Sports",
     "date": "August 10, 2025",
     "location": "New York, NY",
@@ -29,7 +29,8 @@
   {
     "id": 4,
     "thumbnail": "https://i.ibb.co.com/nqDYhzLP/image5.jpg",
-    "name": "AI & Machine Learning Summit 2025",
+    
+    "name": "Photography Exhibition - The Art of Nature",
     "category": "Tech",
     "date": "September 5, 2025",
     "location": "Boston, MA",
@@ -38,7 +39,7 @@
   {
     "id": 5,
     "thumbnail": "https://i.ibb.co.com/fdNGBFRX/image4.jpg",
-    "name": "Photography Exhibition - The Art of Nature",
+    "name": "Business Conference 2025",
     "category": "Art",
     "date": "October 12, 2025",
     "location": "Miami, FL",
@@ -47,7 +48,7 @@
   {
     "id": 6,
     "thumbnail": "https://i.ibb.co.com/m5DcVypV/image3.jpg",
-    "name": "Marathon 2025",
+    "name": "AI & Machine Learning Workshop 2025",
     "category": "Sports",
     "date": "November 7, 2025",
     "location": "Chicago, IL",
