@@ -27,7 +27,7 @@ export default function HeroSlider() {
   ];
 
   return (
-    <div className="w-full rounded-2xl overflow-hidden shadow-xl">
+    <div className="w-full rounded-4xl overflow-hidden shadow-xl  ">
       <Swiper
         spaceBetween={30}
         effect="fade"
@@ -42,7 +42,7 @@ export default function HeroSlider() {
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="relative w-full max-h-[450px]">
+            <div className="relative w-full max-h-[350px]">
               <img
                 src={slide.img}
                 alt={`Slide ${index + 1}`}

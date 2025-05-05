@@ -22,7 +22,7 @@ const Footer = () => {
           className="flex justify-center items-center gap-2 text-xl font-bold mb-4"
         >
           <img src={logo} alt="logo" className="w-6 h-6" />
-          Phudu
+          Event Explorer
         </Link>
 
       
@@ -31,14 +31,14 @@ const Footer = () => {
             Home
           </NavLink>
           <NavLink to="/bookings" className={navLinkStyle}>
-            My-Bookings
+            My Profile
           </NavLink>
-          <NavLink to="/blogs" className={navLinkStyle}>
+          {/* <NavLink to="/blogs" className={navLinkStyle}>
             Blogs
           </NavLink>
           <NavLink to="/contact" className={navLinkStyle}>
             Contact Us
-          </NavLink>
+          </NavLink> */}
         </div>
 
      
