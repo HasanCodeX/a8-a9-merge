@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from "react";
-import DoctorCard from "./DoctorCard";
-import Loading from "./Loading";
+import EventCard from "./EventCard"; // Ensure you create an EventCard component for each event
+import Loading from "./Loading"; // Assuming this is the loading component you're using
 
-const DoctorsSection = () => {
-  const [visibleDoctors, setVisibleDoctors] = useState([]);
-  const [allDoctors, setAllDoctors] = useState([]);
+const UpcomingEventsSection = () => {
+  const [visibleEvents, setVisibleEvents] = useState([]);
+  const [allEvents, setAllEvents] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showAll, setShowAll] = useState(false);
 
   useEffect(() => {
-    fetch("/data/doctors.json")
+    // Fetch events data
+    fetch("/data/events.json") // This path should have your events JSON data
       .then((res) => res.json())
       .then((data) => {
-        setAllDoctors(data);
-        setVisibleDoctors(data.slice(0, 6));
+        setAllEvents(data);
+        setVisibleEvents(data.slice(0, 6)); // Show only 6 events initially
         setLoading(false);
       })
       .catch((err) => {
-        console.error("Failed to fetch doctors data", err);
+        console.error("Failed to fetch events data", err);
         setLoading(false);
       });
   }, []);
@@ -25,7 +26,7 @@ const DoctorsSection = () => {
   const handleShowAll = () => {
     setLoading(true);
     setTimeout(() => {
-      setVisibleDoctors(allDoctors);
+      setVisibleEvents(allEvents);
       setLoading(false);
       setShowAll(true);
     }, 1000); // simulate loading delay
@@ -34,9 +35,9 @@ const DoctorsSection = () => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-10">
       <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold">Our Best Doctors</h2>
+        <h2 className="text-3xl font-bold">Upcoming Events</h2>
         <p className="text-gray-600 mt-2">
-          Our platform connects you with verified, experienced doctors across various specialities.
+          Explore upcoming local events ranging from conferences to workshops and more!
         </p>
       </div>
 
@@ -44,8 +45,8 @@ const DoctorsSection = () => {
         <Loading />
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {visibleDoctors.map((doctor) => (
-            <DoctorCard key={doctor.registration} doctor={doctor} />
+          {visibleEvents.map((event) => (
+            <EventCard key={event.name} event={event} />
           ))}
         </div>
       )}
@@ -56,7 +57,7 @@ const DoctorsSection = () => {
             onClick={handleShowAll}
             className="btn btn-primary rounded-3xl px-6 py-2 bg-blue-600 text-white hover:bg-blue-700 transition"
           >
-            View All Doctors
+            View All Events
           </button>
         </div>
       )}
@@ -64,4 +65,4 @@ const DoctorsSection = () => {
   );
 };
 
-export default DoctorsSection;
+export default UpcomingEventsSection;
