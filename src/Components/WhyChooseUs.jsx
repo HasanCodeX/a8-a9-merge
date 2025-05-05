@@ -1,44 +1,60 @@
 // WhyChooseUs.jsx
 import React from "react";
-import { FaCheckCircle, FaUserFriends, FaCalendarAlt, FaShieldAlt } from "react-icons/fa";
+import {
+  FaCheckCircle,
+  FaUserFriends,
+  FaCalendarAlt,
+  FaShieldAlt,
+} from "react-icons/fa";
 
 const benefits = [
   {
     icon: <FaCalendarAlt />,
     title: "Curated Events",
-    desc: "Find high-quality, handpicked events tailored for your interest.",
+    description: "Discover expertly selected events tailored to your interests.",
   },
   {
     icon: <FaUserFriends />,
-    title: "Community Driven",
-    desc: "Connect with fellow attendees and organizers.",
+    title: "Community-Centric",
+    description: "Engage with a vibrant community of attendees and organizers.",
   },
   {
     icon: <FaShieldAlt />,
     title: "Verified Listings",
-    desc: "All events are screened to ensure legitimacy.",
+    description: "Attend with confidence—every event is carefully vetted.",
   },
   {
     icon: <FaCheckCircle />,
-    title: "Easy Booking",
-    desc: "Register and attend events with a few simple clicks.",
+    title: "Seamless Booking",
+    description: "Effortlessly register and manage your event participation.",
   },
 ];
 
 const WhyChooseUs = () => {
   return (
-    <section className="bg-gray-100 py-12 px-4">
+    <section className="m-8 rounded-4xl bg-gradient-to-br from-blue-100 via-purple-100 to-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-3xl font-bold mb-6">Why Choose Event Explorer?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          {benefits.map((item, i) => (
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+          Why Choose <span className="text-blue-600">Event Explorer</span>?
+        </h2>
+        <p className="text-gray-600 max-w-2xl mx-auto text-sm sm:text-base mb-10 px-2">
+          Explore the benefits that make Event Explorer your go-to platform for discovering, attending, and enjoying local events.
+        </p>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+          {benefits.map((benefit, index) => (
             <div
-              key={i}
-              className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition"
+              key={index}
+              className="bg-white p-6 rounded-2xl shadow-md hover:shadow-lg transition duration-300"
             >
-              <div className="text-4xl text-blue-600 mb-4 mx-auto">{item.icon}</div>
-              <h3 className="text-lg font-semibold">{item.title}</h3>
-              <p className="text-gray-600 mt-2 text-sm">{item.desc}</p>
+              <div className="text-4xl sm:text-5xl text-blue-600 mb-4">
+                {benefit.icon}
+              </div>
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+                {benefit.title}
+              </h3>
+              <p className="text-sm sm:text-base text-gray-600">
+                {benefit.description}
+              </p>
             </div>
           ))}
         </div>
