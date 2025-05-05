@@ -1,11 +1,9 @@
-
-
 // FeaturedCategories.jsx
 import React from "react";
 import { FaPaintBrush, FaLaptopCode, FaFootballBall, FaTheaterMasks } from "react-icons/fa";
 
 const categories = [
-  { icon: <FaLaptopCode />, title: "Tech", description: "Workshops, Hackathon Events, Conferences" },
+  { icon: <FaLaptopCode />, title: "Tech", description: "Workshops, Hackathons, Conferences" },
   { icon: <FaPaintBrush />, title: "Art", description: "Exhibitions, Galleries, Auctions" },
   { icon: <FaFootballBall />, title: "Sports", description: "Tournaments, Marathons, Matches" },
   { icon: <FaTheaterMasks />, title: "Culture", description: "Theatre, Festivals, Talks" },
@@ -22,7 +20,7 @@ const FeaturedCategories = () => {
         {categories.map((cat, idx) => (
           <div
             key={idx}
-            className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition border-2 border-blue-200"
+            className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition"
           >
             <div className="text-4xl text-blue-600 mb-4">{cat.icon}</div>
             <h3 className="text-xl font-semibold">{cat.title}</h3>

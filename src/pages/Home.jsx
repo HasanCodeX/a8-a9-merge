@@ -1,20 +1,19 @@
-import HeroSection from '../Components/HeroSection';
-import SuccessSection from '../Components/SuccessSection';
-import  DoctorsSection  from '../Components/DoctorsSection';
+import HeroSection from "../Components/HeroSection";
 
-
+import WhyChooseUs from "../Components/WhyChooseUs";
+import UpcomingEventsSection from "../Components/DoctorsSection";
+import FeaturedCategories from "../Components/ FeaturedCategories";
 
 const Home = () => {
-    return (
-        <>
-            <HeroSection />
-             <DoctorsSection />
-            <SuccessSection />
-            
-           
-        </>
-    );
+  return (
+    <>
+      <HeroSection />
+
+      <UpcomingEventsSection />
+      <WhyChooseUs />
+      <FeaturedCategories />
+    </>
+  );
 };
 
 export default Home;
-  

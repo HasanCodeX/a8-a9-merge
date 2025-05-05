@@ -14,7 +14,7 @@ const UpcomingEventsSection = () => {
       .then((res) => res.json())
       .then((data) => {
         setAllEvents(data);
-        setVisibleEvents(data.slice(0, 6)); // Show only 6 events initially
+        setVisibleEvents(data.slice(0, 3)); // Show only 6 events initially
         setLoading(false);
       })
       .catch((err) => {
